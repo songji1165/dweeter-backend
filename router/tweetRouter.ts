@@ -109,10 +109,7 @@ router.delete('/:id', (req: TweetsRequest<Partial<TweetContent>>, res: Response,
     res.status(code).send(send);
 });
 
-router.use((err, req, res, next) => {
-    console.error(err);
-    res.status(400).send(err);
-});
+
 
 
 export default router;

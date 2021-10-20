@@ -3,6 +3,7 @@ import * as morgan from "morgan";
 import * as helmet from "helmet";
 import * as cors from "cors";
 import tweetRouter from "./router/tweetRouter";
+import router from "./router/tweetRouter";
 
 const app = express();
 
@@ -15,5 +16,14 @@ app.use(cors());
 
 app.use('/tweets', tweetRouter);
 
+// 공통 에러 핸들러
+app.use((req, res, next) => {
+    res.sendStatus(404);
+});
+
+app.use((error, req, res, next) => {
+    console.error(error);
+    res.sendStatus(500);
+});
 
 app.listen(8080);
