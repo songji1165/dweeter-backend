@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tweet = void 0;
 var moment = require("moment");
-var TweetList_1 = require("./TweetList");
 var Tweet = function (tweet) {
     this.id = (function () {
         var returnId = exports.Tweet.prototype.length;
@@ -17,9 +16,9 @@ var Tweet = function (tweet) {
 };
 exports.Tweet = Tweet;
 exports.Tweet.prototype = Object.create([]);
-exports.Tweet.prototype.updateTweets = function (tweet) {
-    tweet && TweetList_1.default.push(tweet);
-};
+// Tweet.prototype.updateTweets = function (tweet: TweetModel){
+//     tweet && TweetList.push(tweet);
+// }
 /*
 class TweetId {
     ids = 0;

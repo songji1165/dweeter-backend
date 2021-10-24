@@ -1,5 +1,4 @@
 import moment = require("moment");
-import TweetList from "./TweetList";
 
 export type TweetContent = {
     text: string;     // 트윗 텍스트
@@ -29,9 +28,9 @@ export const Tweet = function (tweet: TweetContent) {
 }
 
 Tweet.prototype = Object.create([]);
-Tweet.prototype.updateTweets = function (tweet: TweetModel){
-    tweet && TweetList.push(tweet);
-}
+// Tweet.prototype.updateTweets = function (tweet: TweetModel){
+//     tweet && TweetList.push(tweet);
+// }
 
 
 
