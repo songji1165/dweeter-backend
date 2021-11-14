@@ -4,6 +4,7 @@ import * as helmet from "helmet";
 import * as cors from "cors";
 import tweetRouter from "./router/tweetRouter";
 import router from "./router/tweetRouter";
+import authRouter from "./router/authRouter";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use('/tweets', tweetRouter);
+app.use('/auth', authRouter);
 
 // 공통 에러 핸들러
 app.use((req, res, next) => {
